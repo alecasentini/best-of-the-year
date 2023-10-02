@@ -9,6 +9,7 @@ import org.java.app.song.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -55,6 +56,31 @@ public class MainController {
 		String songList = bestSongs.stream().map(Song::getTitle).collect(Collectors.joining(", "));
 		model.addAttribute("songList", songList);
 		return "songs";
+	}
+	
+	@GetMapping("/movies/{id}")
+	public String movie(@PathVariable int id, Model model) {
+	    List<Movie> bestMovies = getBestMovies();
+	    if (id > 0 && id <= bestMovies.size()) {
+	        Movie movie = bestMovies.get(id - 1);
+	        model.addAttribute("movie", movie.getTitle());
+	    } else {
+	        model.addAttribute("movie", "Movie not found");
+	    }
+	    return "movie-id";
+	}
+
+	
+	@GetMapping("/songs/{id}")
+	public String song(@PathVariable int id, Model model) {
+		List<Song> bestSongs = getBestSongs();
+		if (id > 0 && id <= bestSongs.size()) {
+	        Song song = bestSongs.get(id - 1);
+	        model.addAttribute("song", song.getTitle());
+	    } else {
+	        model.addAttribute("song", "Song not found");
+	    }
+		return "song-id";
 	}
 
 }
