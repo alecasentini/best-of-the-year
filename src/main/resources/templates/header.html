@@ -13,20 +13,21 @@
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Best of</a>
+					<ul class="navbar-nav align-items-center">
+						<li class="nav-item mx-5">
+							<a class="nav-link active fs-4 fw-bolder" aria-current="page" th:href="@{/}">Best of</a>
 						</li>
 						<li class="nav-item mx-5">
-							<a class="nav-link btn btn-danger" th:href="@{/movies}">Movies</a>
+							<a class="btn btn-outline-secondary" th:href="@{/movies}">Movies</a>
 						</li>
 						<li class="nav-item mx-5">
-							<a class="nav-link btn btn-success" th:href="@{/songs}">Songs</a>
+							<a class="btn btn-outline-secondary" th:href="@{/songs}">Songs</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+
 	</header>
 
 </body>
