@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Movie id</title>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+	<title>Movie id</title>
 </head>
+
 <body>
-	
+
+	<div th:insert="header :: header"></div>
+
 	<h3>Id: [[${id}]]</h3>
-	
+
 	<h2>Titolo: [[${movie}]]</h2>
-	
+
+	<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
+
 
 </body>
+
 </html>

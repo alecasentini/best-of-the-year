@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Best of the Year</title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+	<meta charset="ISO-8859-1">
+	<title>Best of the Year</title>
 </head>
+
 <body>
-	<h1>Beast of the year by [[${name}]]</h1>
+
+	<div th:insert="header :: header"></div>
+	<div class="container d-flex flex-column align-items-center py-3">
+		<h1 class="container text-center py-3">Best of the year by [[${name}]]</h1>
+
+		<img alt="logo" th:src="@{/imgs/movie-song.jpg}" />
+
+		<div class="container py-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore architecto
+			veritatis esse, laboriosam
+			natus laudantium. Praesentium tempora vel officia iure corporis? Quidem debitis quasi sit nam eum placeat,
+			magni possimus.
+		</div>
+	</div>
+
+
+
+	<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 
 </body>
+
 </html>

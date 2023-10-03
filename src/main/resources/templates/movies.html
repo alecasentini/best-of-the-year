@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Movies</title>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+	<title>Movies</title>
 </head>
+
 <body>
-	
-	<h1>Best Movies of the Year</h1>
-	<p>[[${movieList}]]</p>
+
+	<div th:insert="header :: header"></div>
+	<div class="container d-flex flex-column align-items-center py-3">
+		<h1 class="py-3">Best Movies of the Year</h1>
+		<div class="container">
+			<ul class="list-group" th:each="movie : ${movies}">
+				<li class="list-group-item list-group-item-action text-center p-3" th:text="${movie.title}"></li>
+			</ul>
+		</div>
+	</div>
+
+	<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 
 </body>
+
 </html>

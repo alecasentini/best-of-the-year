@@ -44,19 +44,18 @@ public class MainController {
 	
 	@GetMapping("/movies")
 	public String movies(Model model){
-		List<Movie> bestMovies = getBestMovies();
-		String movieList = bestMovies.stream().map(Movie::getTitle).collect(Collectors.joining(", "));
-		model.addAttribute("movieList", movieList);
-		return "movies";
+	    List<Movie> bestMovies = getBestMovies();
+	    model.addAttribute("movies", bestMovies);
+	    return "movies";
 	}
-	
+
 	@GetMapping("/songs")
 	public String songs(Model model){
-		List<Song> bestSongs = getBestSongs();
-		String songList = bestSongs.stream().map(Song::getTitle).collect(Collectors.joining(", "));
-		model.addAttribute("songList", songList);
-		return "songs";
+	    List<Song> bestSongs = getBestSongs();
+	    model.addAttribute("songs", bestSongs);
+	    return "songs";
 	}
+
 	
 	@GetMapping("/movies/{id}")
 	public String movie(@PathVariable int id, Model model) {
